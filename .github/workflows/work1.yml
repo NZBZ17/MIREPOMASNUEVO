@@ -3,6 +3,21 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: node:24
+
     steps:
       - name: Me printie
-        run: echo Hello, world mdfck!
+        run: |
+          echo "Ejecuntando el job de Work 1 Zayed"
+          node --version
+          npm --version
+
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Ejecutar app
+        run: node app.js
