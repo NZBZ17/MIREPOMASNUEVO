@@ -1,0 +1,8 @@
+name: Work 1 Zayed
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Me printie
+        run: echo Hello, world mdfck!
